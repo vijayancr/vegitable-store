@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vegetable-site
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vegetable-site
+  template:
+    metadata:
+      labels:
+        app: vegetable-site
+    spec:
+      containers:
+      - name: vegetable-site
+        image: vijayarangan2002/vegetable-site:latest
+        ports:
+        - containerPort: 80
